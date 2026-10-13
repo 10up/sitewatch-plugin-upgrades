@@ -1,6 +1,6 @@
 # sitewatch-plugin-upgrades
 
-**Repository:** [github.com/felipeelia/sitewatch-plugin-upgrades](https://github.com/felipeelia/sitewatch-plugin-upgrades)
+**Repository:** [github.com/10up/sitewatch-plugin-upgrades](https://github.com/10up/sitewatch-plugin-upgrades)
 
 Reusable GitHub Actions for SiteWatch projects. This repo hosts multiple actions; each is used by path (e.g. `owner/repo/action-name@ref`). The root action exists only for backwards compatibility and is **deprecated**—prefer the subfolder form.
 
@@ -13,7 +13,7 @@ Reusable GitHub Actions for SiteWatch projects. This repo hosts multiple actions
 
 ## Plugin Upgrades — Usage
 
-In the repo where you want plugin upgrade PRs (e.g. a wp-content repo with a root `composer.json`), add a workflow that checks out the repo and uses this action. Use the **plugin-upgrades** path (the root form `felipeelia/sitewatch-plugin-upgrades@trunk` is deprecated but still works):
+In the repo where you want plugin upgrade PRs (e.g. a wp-content repo with a root `composer.json`), add a workflow that checks out the repo and uses this action. Use the **plugin-upgrades** path (the root form `10up/sitewatch-plugin-upgrades@trunk` is deprecated but still works):
 
 ```yaml
 name: Plugin Updates PR
@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Plugin upgrades
-        uses: felipeelia/sitewatch-plugin-upgrades/plugin-upgrades@trunk
+        uses: 10up/sitewatch-plugin-upgrades/plugin-upgrades@trunk
         with:
           prod_branch: trunk
           staging_branch: staging
@@ -59,7 +59,7 @@ Push and PR creation use the default `GITHUB_TOKEN`; no extra secrets are requir
 **GitHub only (recommended):** Add a repo secret (e.g. `UI_KIT`) with a GitHub token that can read your private packages, then pass it in:
 
 ```yaml
-- uses: felipeelia/sitewatch-plugin-upgrades/plugin-upgrades@trunk
+- uses: 10up/sitewatch-plugin-upgrades/plugin-upgrades@trunk
   with:
     prod_branch: trunk
     staging_branch: staging
@@ -71,7 +71,7 @@ The action runs `composer config --global github-oauth.github.com <token>` befor
 **Other hosts (GitLab, etc.):** Use the `composer_auth` input with full JSON:
 
 ```yaml
-- uses: felipeelia/sitewatch-plugin-upgrades/plugin-upgrades@trunk
+- uses: 10up/sitewatch-plugin-upgrades/plugin-upgrades@trunk
   with:
     composer_auth: ${{ secrets.COMPOSER_AUTH }}
 ```
@@ -142,7 +142,7 @@ jobs:
       - uses: actions/checkout@v6
       # Add your own steps here if needed (e.g. setup, other actions)
       - name: Vuln plugin update
-        uses: felipeelia/sitewatch-plugin-upgrades/vuln-plugin-update@trunk
+        uses: 10up/sitewatch-plugin-upgrades/vuln-plugin-update@trunk
         with:
           update_mode: ${{ inputs.update_mode }}
           update_package: ${{ inputs.update_package }}
