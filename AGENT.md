@@ -1,6 +1,6 @@
 # Agent guidance: sitewatch-plugin-upgrades
 
-This repo is a **reusable GitHub Action** for SiteWatch projects hosted on **GitHub**. Consumer projects use it in their workflows with `uses: felipeelia/sitewatch-plugin-upgrades@trunk` (or a tag). The action runs in the **consumer’s workspace** (after they run `actions/checkout`): it performs Composer-based plugin upgrades, builds a PR description, pushes a branch, and opens PRs against the consumer’s branches (e.g. production, staging).
+This repo is a **reusable GitHub Action** for SiteWatch projects hosted on **GitHub**. Consumer projects use it in their workflows with `uses: 10up/sitewatch-plugin-upgrades@trunk` (or a tag). The action runs in the **consumer’s workspace** (after they run `actions/checkout`): it performs Composer-based plugin upgrades, builds a PR description, pushes a branch, and opens PRs against the consumer’s branches (e.g. production, staging).
 
 **Keep this file updated:** When you add, remove, or rename actions, scripts, or key files—or change conventions—update **AGENT.md** so the repo layout, “Key files to touch”, and conventions stay accurate.
 
@@ -59,4 +59,4 @@ Each action lives in its own directory with `action.yml` and script(s) directly 
 ## References
 
 - **README.md**: Full documentation for consumers (inputs, Composer auth, usage, behaviour).
-- Consumer example: workflows that `uses: felipeelia/sitewatch-plugin-upgrades@trunk` (e.g. GitHub-hosted wp-content repos with a “Plugin Updates PR” workflow).
+- Consumer example: workflows that `uses: 10up/sitewatch-plugin-upgrades@trunk` (e.g. GitHub-hosted wp-content repos with a “Plugin Updates PR” workflow).
